@@ -1,2 +1,0 @@
-class Reply < Comment
-end

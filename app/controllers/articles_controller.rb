@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
 	http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-  before_action :authenticate_user!
   
   layout 'box', only: 'index'
 
@@ -10,7 +9,6 @@ class ArticlesController < ApplicationController
 
 	def index
     @articles = Article.all
-    @aticles = Article.page(params[:page])
  	end
 
 	def new

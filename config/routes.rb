@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   get 'welcome/Index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -7,11 +6,7 @@ Rails.application.routes.draw do
   	resources :comments
   end
 
-  resources :articles, concerns: :commentable do
-  	collection do
-  		get 'populate'
-  	end
-  end
+  resources :articles, concerns: :commentable
 
   root 'welcome#Index'
 end

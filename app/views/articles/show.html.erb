@@ -10,12 +10,6 @@
  
 <h2>Comments</h2>
 <%= render @article.comments %>
-
-<h2>Total Comments</h2>
-<%= showTotalComments(@article.comments) %>
-
-<h2>Total Comments in a cool way</h2>
-<%= simple_format(showTotalCommentsInACoolWay(@article.comments)) %>
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>

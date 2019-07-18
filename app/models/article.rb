@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
 
-	#after_initialize :afteri
-	#before_update :beforeu
-	#after_update :afteru
+	after_initialize :afteri
+	before_update :beforeu
+	after_update :afteru
 
 
 	has_many :comments, dependent: :destroy
