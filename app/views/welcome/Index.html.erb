@@ -1,7 +1,15 @@
-<div class="container">
-  <%= link_to 'Sign up', new_user_registration_path, class: 'btn' %>
-  <%= link_to 'Log in', new_user_session_path, class: 'btn' %>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="<%= url_for new_user_registration_path %>"> Sign Up </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="<%= url_for new_user_session_path %>"> Log In </a>
+    </li>
+  </ul>
+</nav>
 
+<div class="container">
   <div class="jumbotron text-center">
     <h1> A Random Articles website with Comments! </h1>
     <p> You can see articles and you can see comments </p> 
