@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test2</title>
+    <title><%=  content_for?(:title) ? yield(:title) : 'TheNews.pk' %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

@@ -4,8 +4,7 @@ class Article < ApplicationRecord
 	#before_update :beforeu
 	#after_update :afteru
 
-  attr_accessor :category
-	has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
 	validates :title, presence: true,
                     length: { minimum: 5 }
 

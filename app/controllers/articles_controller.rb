@@ -7,7 +7,6 @@ class ArticlesController < ApplicationController
   end
 
 	def index
-    @articles = Article.all
     @aticles = Article.page(params[:page])
  	end
 
@@ -33,7 +32,7 @@ class ArticlesController < ApplicationController
   	@article = Article.find(params[:id])
  
   	if @article.update(article_params)
-    	redirect_to @article
+    	redirect_to articles_path
   	else
     	render 'edit'
   	end
@@ -48,6 +47,6 @@ class ArticlesController < ApplicationController
 
 private
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :category)
   end
 end

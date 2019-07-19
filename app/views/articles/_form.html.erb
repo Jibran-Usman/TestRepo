@@ -18,7 +18,7 @@
     </p>
 
     <p class='form-group'>
-      <%= form.select :category, options_for_select([['Lisbon', '1'], ['Madrid', '2']]), { include_blank: 'Choose City' }, class: 'form-control' %>
+      <%= form.select :category, options_for_select(['Important', 'Not Important'], @article.category), { include_blank: 'Choose Category' }, class: 'form-control' %>
     </p>
    
     <p class='form-group'>
