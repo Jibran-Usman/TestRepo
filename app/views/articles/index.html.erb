@@ -1,8 +1,14 @@
 <div class='container-fluid'>
+
+  <div class='float-right' >
+    <%= link_to 'New Article', new_article_path, class: 'btn' %>
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'btn' %>
+  </div>
+
   <h1>Listing articles</h1>
 
   <%= page_entries_info @aticles %>
-  <table class='table table-condensed table-hover table-dark'>
+  <table class='table table-condensed table-hover table-dark table-striped'>
     <tr>
       <th>Title</th>
       <th>Text</th>
@@ -13,18 +19,14 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= show_limited_description(article) %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Show', article_path(article), class: 'btn text-white' %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), class: 'btn text-white' %></td>
         <td><%= link_to 'Destroy', article_path(article),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+                data: { confirm: 'Are you sure?' }, class: 'btn text-white' %></td>
       </tr>
     <% end %>
   </table>
   <%= paginate @aticles, class: 'btn', data: { 'btn' => true } %>
-
-  <%= link_to 'Back', root_path %>
-  <%= link_to 'New Article', new_article_path %>
-  <%= link_to 'Sign out', destroy_user_session_path %>
 
 </div>
