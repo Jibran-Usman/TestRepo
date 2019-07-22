@@ -1,7 +1,7 @@
 <p>
   <%= link_to 'Delete', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary text-center float-right' %>
+               data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary text-center float-right', :remote => true %>
 </p>
 
 <p>

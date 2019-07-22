@@ -3,7 +3,16 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
 	def show
+    @em = ''
+    @em = current_user.email if user_signed_in?
+    #UserMailer.send_mail(@em).deliver_later
     @article = Article.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { head :no_content }
+      format.js   { render :layout => false }
+    end
   end
 
 	def index
@@ -41,8 +50,12 @@ class ArticlesController < ApplicationController
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
-	   
-		redirect_to articles_path
+
+    respond_to do |format|
+      format.html { redirect_to articles_path }
+      format.json { head :no_content }
+      format.js   { render :layout => false }
+    end
 	end
 
 private
