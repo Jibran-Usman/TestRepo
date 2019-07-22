@@ -18,6 +18,11 @@
     </p>
 
     <p class='form-group'>
+      <%= form.select :articles, 
+      Article.all.map { |u| [u.title, u.id] } , { include_blank: 'Choose Category' }, class: 'chosen-select form-control' %>
+    </p>
+
+    <p class='form-group'>
       <%= form.select :category, options_for_select(['Important', 'Not Important'], @article.category), { include_blank: 'Choose Category' }, class: 'chosen-select form-control' %>
     </p>
    
